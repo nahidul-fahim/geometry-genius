@@ -17,10 +17,14 @@ function setAreaValue (areaElementId, area){
 
 // FUNCTION TO ADD AREA TO HISTORY
 
-function addAreaToHistory (geometryShape){
-    const shapeName = document.getElementById (geometryShape);
-    
+function addAreaToHistory (geometryShape, shapeArea){
+    const areaAddingDiv = document.getElementById('area-adding-div');
+    const areaAddingLine = document.createElement('p');
+    areaAddingLine.innerHTML = `${geometryShape} ${shapeArea} cm<sup>2</sup>`
+    areaAddingDiv.appendChild(areaAddingLine);
 }
+
+
 
 // TRIANGLE-AREA-CALCULATION
 
@@ -33,6 +37,8 @@ document.getElementById('triangle-calculation').addEventListener('click', functi
     }
     const triangleArea = 0.5 * triangleBaseInput * triangleHeightInput;
     setAreaValue('tranglge-area-add', triangleArea);
+
+    addAreaToHistory ('Triangle', triangleArea);
 })
 
 //RECTANGLE-AREA-CALCULATION
