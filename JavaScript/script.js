@@ -3,10 +3,6 @@
 function valueFromInputBox (inputField){
     const providedValue = document.getElementById(inputField);
     const providedValueInString = providedValue.value;
-    if (providedValue.value < 0 || providedValue.value === '-'){
-        window.alert('please provide a valid number');
-        return;
-    }
     const providedValueInNumber = parseFloat(providedValueInString);
     providedValue.value = '';
     return providedValueInNumber;
@@ -31,6 +27,10 @@ function addAreaToHistory (geometryShape){
 document.getElementById('triangle-calculation').addEventListener('click', function(){
     const triangleBaseInput = valueFromInputBox('triangle-base-input');
     const triangleHeightInput = valueFromInputBox('triangle-height-input');
+    if (isNaN(triangleBaseInput) || isNaN (triangleHeightInput) || triangleBaseInput < 0 || triangleHeightInput < 0){
+        window.alert('You must enter positive numbers only');
+        return;
+    }
     const triangleArea = 0.5 * triangleBaseInput * triangleHeightInput;
     setAreaValue('tranglge-area-add', triangleArea);
 })
@@ -40,6 +40,10 @@ document.getElementById('triangle-calculation').addEventListener('click', functi
 document.getElementById('rectangle-calculation').addEventListener('click', function(){
     const rectagnleWidthInput = valueFromInputBox('rectangle-width-input');
     const rectangleHeightInput = valueFromInputBox('rectangle-length-input');
+    if (isNaN(rectagnleWidthInput) || isNaN (rectangleHeightInput) || rectagnleWidthInput < 0 || rectangleHeightInput < 0){
+        window.alert('You must enter positive numbers only');
+        return;
+    }
     const rectangleArea = rectagnleWidthInput * rectangleHeightInput;
     setAreaValue ('rectangle-area-add', rectangleArea);
 })
@@ -49,6 +53,10 @@ document.getElementById('rectangle-calculation').addEventListener('click', funct
 document.getElementById('parallelogram-area-calculation').addEventListener('click', function (){
     const parallelogramBaseInput = valueFromInputBox('parallelogra-base-input');
     const parallelogramHeightInput = valueFromInputBox('parallelogra-height-input')
+    if (isNaN(parallelogramBaseInput) || isNaN (parallelogramHeightInput) || parallelogramBaseInput < 0 || parallelogramHeightInput < 0){
+        window.alert('You must enter positive numbers only');
+        return;
+    }
     const parallelogramArea = parallelogramBaseInput * parallelogramHeightInput;
     setAreaValue ('parallelogram-area-add', parallelogramArea);
 })
