@@ -19,8 +19,11 @@ function setAreaValue (areaElementId, area){
 
 function addAreaToHistory (geometryShape, shapeArea){
     const areaAddingDiv = document.getElementById('area-adding-div');
+
     const areaAddingLine = document.createElement('p');
-    areaAddingLine.innerHTML = `${geometryShape} ${shapeArea} cm<sup>2</sup>`
+    areaAddingLine.classList.add('new-area');
+    const areaListCount = areaAddingDiv.childElementCount;
+    areaAddingLine.innerHTML = `${areaListCount + 1}. ${geometryShape} ${shapeArea} cm<sup>2</sup> <button class="text-white bg-violet-800 rounded-[4px] px-4 py-[5px]">Convert to m<sup>2</sup></button>`
     areaAddingDiv.appendChild(areaAddingLine);
 }
 
@@ -52,6 +55,8 @@ document.getElementById('rectangle-calculation').addEventListener('click', funct
     }
     const rectangleArea = rectagnleWidthInput * rectangleHeightInput;
     setAreaValue ('rectangle-area-add', rectangleArea);
+
+    addAreaToHistory ('Rectangle', rectangleArea);
 })
 
 //PARALLELOGRAM-AREA-CALCULATION
@@ -65,4 +70,6 @@ document.getElementById('parallelogram-area-calculation').addEventListener('clic
     }
     const parallelogramArea = parallelogramBaseInput * parallelogramHeightInput;
     setAreaValue ('parallelogram-area-add', parallelogramArea);
+    
+    addAreaToHistory ('Parallelogram', parallelogramArea);
 })
