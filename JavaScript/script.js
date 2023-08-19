@@ -23,7 +23,7 @@ function addAreaToHistory (geometryShape, shapeArea){
     const areaAddingLine = document.createElement('p');
     areaAddingLine.classList.add('new-area');
     const areaListCount = areaAddingDiv.childElementCount;
-    areaAddingLine.innerHTML = `${areaListCount + 1}. ${geometryShape} ${shapeArea} cm<sup>2</sup> <button class="text-white bg-violet-800 rounded-[4px] px-4 py-[5px]">Convert to m<sup>2</sup></button>`
+    areaAddingLine.innerHTML = `${areaListCount + 1}. ${geometryShape} ${shapeArea} cm<sup>2</sup> <button class="text-white bg-[#11798b] rounded-[4px] px-4 py-[5px]">Convert to m<sup>2</sup></button>`
     areaAddingDiv.appendChild(areaAddingLine);
 }
 

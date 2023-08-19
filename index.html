@@ -17,7 +17,7 @@
 <body>
 
     <header class="bg-[#e8d9ff]">
-        <nav class="container mx-auto px-8 py-5 flex justify-between items-center">
+        <nav class="container mx-auto p-5 md:px-8 md:py-5 flex justify-between items-center">
             <div>
                 <h2 class="text-3xl font-bold">Interactive<br><span class="text-xl font-medium">Geometry Genius</span>
                 </h2>
@@ -31,96 +31,106 @@
 
     <main class="container mx-auto p-8">
 
-        <!-- Geometry shape cards -->
+        <section class="grid grid-cols-1 gap-x-4 gap-y-10 lg:grid-cols-3">
 
-        <div class="grid grid-cols-3 row-auto gap-x-8 gap-y-10">
+            <!-- DIV FOR THE SHAPES -->
 
-            <!-- Triangle card -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-4 gap-y-8 col-span-2">
 
-            <div class="card w-96 bg-base-100 shadow-xl hover:bg-[#ffdbfd] p-5">
-                <figure><img src="./images/triangle.png" alt="Shoes" /></figure>
-                <div class="card-body space-y-5">
-                    <h2 class="text-center text-xl font-semibold">Triangle</h2>
-                    <p class="text-center">Area = 0.5 * b * h</p>
-                    <div class="flex space-x-3 justify-between items-center">
-                        <input type="number" name="" id="triangle-base-input"
-                            class="border-[1px] border-[#bbbbbb] focus:outline-none focus:border-[black] w-[100px] p-[5px] rounded"
-                            placeholder="b">
-                        <p class="text-base">cm</p>
+                <!-- Triangle card -->
 
-                        <input type="number" name="" id="triangle-height-input"
-                            class="border-[1px] border-[#bbbbbb] focus:outline-none focus:border-[black] w-[100px] p-[5px] rounded"
-                            placeholder="h">
-                        <p class="text-base">cm</p>
+                <div class="card w-96 bg-base-100 shadow-xl hover:bg-[#ffdbfd] p-5">
+                    <figure><img src="./images/triangle.png" alt="Shoes" /></figure>
+                    <div class="card-body space-y-5">
+                        <h2 class="text-center text-xl font-semibold">Triangle</h2>
+                        <p class="text-center">Area = 0.5 * b * h</p>
+                        <div class="flex space-x-3 justify-between items-center">
+                            <input type="number" name="" id="triangle-base-input"
+                                class="border-[1px] border-[#bbbbbb] focus:outline-none focus:border-[black] w-[100px] p-[5px] rounded"
+                                placeholder="b">
+                            <p class="text-base">cm</p>
+
+                            <input type="number" name="" id="triangle-height-input"
+                                class="border-[1px] border-[#bbbbbb] focus:outline-none focus:border-[black] w-[100px] p-[5px] rounded"
+                                placeholder="h">
+                            <p class="text-base">cm</p>
+                        </div>
+                        <p class="text-center text-xl font-semibold text-[#6c32af]">Area: <span
+                                id="tranglge-area-add">___</span> cm<sup>2</sup></p>
+                        <div class="card-actions">
+                            <button id="triangle-calculation" class="btn btn-primary mx-auto w-full">Calculate</button>
+                        </div>
                     </div>
-                    <p class="text-center text-xl font-semibold text-[#6c32af]">Area: <span id="tranglge-area-add">___</span>  cm<sup>2</sup></p>
-                    <div class="card-actions">
-                        <button id="triangle-calculation" class="btn btn-primary mx-auto w-full">Calculate</button>
+                </div>
+
+                <!-- Rectangle card -->
+
+                <div class="card w-96 bg-base-100 shadow-xl hover:bg-[#fffed9] p-5">
+                    <figure><img src="./images/rectangle.png" alt="rectangle" /></figure>
+                    <div class="card-body space-y-5">
+                        <h2 class="text-center text-xl font-semibold">Rectangle</h2>
+                        <p class="text-center">Area = w * l</p>
+                        <div class="flex space-x-3 justify-between items-center">
+                            <input type="number" name="" id="rectangle-width-input"
+                                class="border-[1px] border-[#bbbbbb] focus:outline-none focus:border-[black] w-[100px] p-[5px] rounded"
+                                placeholder="w">
+                            <p class="text-base">cm</p>
+
+                            <input type="number" name="" id="rectangle-length-input"
+                                class="border-[1px] border-[#bbbbbb] focus:outline-none focus:border-[black] w-[100px] p-[5px] rounded"
+                                placeholder="l">
+                            <p class="text-base">cm</p>
+                        </div>
+                        <p class="text-center text-xl font-semibold text-[#6c32af]">Area: <span
+                                id="rectangle-area-add">___</span> cm<sup>2</sup></p>
+                        <div class="card-actions">
+                            <button id="rectangle-calculation" class="btn btn-primary mx-auto w-full">Calculate</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Parallelogram card -->
+
+                <div class="card w-96 bg-base-100 shadow-xl hover:bg-[#deefff] p-5">
+                    <figure><img src="./images/parallelogram.png" alt="Shoes" /></figure>
+                    <div class="card-body space-y-5">
+                        <h2 class="text-center text-xl font-semibold">Parallelogram</h2>
+                        <p class="text-center">Area = b * h</p>
+                        <div class="flex space-x-3 justify-between items-center">
+                            <input type="number" name="" id="parallelogra-base-input"
+                                class="border-[1px] border-[#bbbbbb] focus:outline-none focus:border-[black] w-[100px] p-[5px] rounded"
+                                placeholder="b">
+                            <p class="text-base">cm</p>
+
+                            <input type="number" name="" id="parallelogra-height-input"
+                                class="border-[1px] border-[#bbbbbb] focus:outline-none focus:border-[black] w-[100px] p-[5px] rounded"
+                                placeholder="h">
+                            <p class="text-base">cm</p>
+                        </div>
+                        <p class="text-center text-xl font-semibold text-[#6c32af]">Area: <span
+                                id="parallelogram-area-add">___</span> cm<sup>2</sup></p>
+                        <div class="card-actions">
+                            <button id="parallelogram-area-calculation"
+                                class="btn btn-primary mx-auto w-full">Calculate</button>
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </div>
+
+            <!-- DIV FOR THE AREA CALCULATION HISTORY-->
+
+            <div class="col-span-1">
+                <div class="border-[1px] border-[lightgray] rounded-md flex flex-col justify-start items-left p-5">
+                    <h2 class="text-3xl text-[#7022ff] font-bold mb-[30px] text-center">Calculation History</h2>
+                    <div id="area-adding-div" class="space-y-5 text-left">
                     </div>
                 </div>
             </div>
 
-            <!-- Rectangle card -->
-
-            <div class="card w-96 bg-base-100 shadow-xl hover:bg-[#fffed9] p-5">
-                <figure><img src="./images/rectangle.png" alt="rectangle"/></figure>
-                <div class="card-body space-y-5">
-                    <h2 class="text-center text-xl font-semibold">Rectangle</h2>
-                    <p class="text-center">Area = w * l</p>
-                    <div class="flex space-x-3 justify-between items-center">
-                        <input type="number" name="" id="rectangle-width-input"
-                            class="border-[1px] border-[#bbbbbb] focus:outline-none focus:border-[black] w-[100px] p-[5px] rounded"
-                            placeholder="w">
-                        <p class="text-base">cm</p>
-
-                        <input type="number" name="" id="rectangle-length-input"
-                            class="border-[1px] border-[#bbbbbb] focus:outline-none focus:border-[black] w-[100px] p-[5px] rounded"
-                            placeholder="l">
-                        <p class="text-base">cm</p>
-                    </div>
-                    <p class="text-center text-xl font-semibold text-[#6c32af]">Area: <span id="rectangle-area-add">___</span>  cm<sup>2</sup></p>
-                    <div class="card-actions">
-                        <button id="rectangle-calculation" class="btn btn-primary mx-auto w-full">Calculate</button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- AREA CALCULATION HISTORY -->
-
-            <div class="border-[1px] border-[lightgray] rounded-md flex flex-col justify-start items-left p-5">
-                <h2 class="text-3xl text-[#7022ff] font-bold mb-[30px] text-center">Calculation History</h2>
-                <div id="area-adding-div" class="space-y-5 text-left">
-                </div>
-            </div>
-
-
-
-            <!-- Parallelogram card -->
-
-            <div class="card w-96 bg-base-100 shadow-xl hover:bg-[#deefff] p-5">
-                <figure><img src="./images/parallelogram.png" alt="Shoes" /></figure>
-                <div class="card-body space-y-5">
-                    <h2 class="text-center text-xl font-semibold">Parallelogram</h2>
-                    <p class="text-center">Area = b * h</p>
-                    <div class="flex space-x-3 justify-between items-center">
-                        <input type="number" name="" id="parallelogra-base-input"
-                            class="border-[1px] border-[#bbbbbb] focus:outline-none focus:border-[black] w-[100px] p-[5px] rounded"
-                            placeholder="b">
-                        <p class="text-base">cm</p>
-
-                        <input type="number" name="" id="parallelogra-height-input"
-                            class="border-[1px] border-[#bbbbbb] focus:outline-none focus:border-[black] w-[100px] p-[5px] rounded"
-                            placeholder="h">
-                        <p class="text-base">cm</p>
-                    </div>
-                    <p class="text-center text-xl font-semibold text-[#6c32af]">Area: <span id="parallelogram-area-add">___</span>  cm<sup>2</sup></p>
-                    <div class="card-actions">
-                        <button id="parallelogram-area-calculation" class="btn btn-primary mx-auto w-full">Calculate</button>
-                    </div>
-                </div>
-            </div>
-
-        </div>
+        </section>
 
     </main>
 
